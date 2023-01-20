@@ -1,3 +1,6 @@
+Need to be done before build:
+* (???) npm install @angular/common ( or @angular/http@latest )
+
 To run server:
 * go to lkre-server/ folder and run in terminal mvn spring-boot:run
 

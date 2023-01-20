@@ -1,16 +1,21 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
+import {LkreTvSchedulerComponent} from './lkre-tv-scheduler/lkre-tv-scheduler.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LkreTvSchedulerComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
