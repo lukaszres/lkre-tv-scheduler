@@ -4,12 +4,12 @@
         xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>pl.sda</groupId>
-        <artifactId>sda-application</artifactId>
+        <groupId>pl.lkre</groupId>
+        <artifactId>lkre-tv-scheduler</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>sda-web</artifactId>
+    <artifactId>lkre-web</artifactId>
     <packaging>pom</packaging>
 
     <build>
