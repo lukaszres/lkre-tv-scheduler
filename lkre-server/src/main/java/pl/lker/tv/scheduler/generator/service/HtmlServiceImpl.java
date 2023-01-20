@@ -1,10 +1,10 @@
-package pl.sda.springboot.generator.service;
+package pl.lker.tv.scheduler.generator.service;
 
-import pl.sda.springboot.generator.HtmlService;
-import pl.sda.springboot.generator.service.channel.ChannelListService;
-import pl.sda.springboot.generator.service.channellNames.ChannelNamesService;
-import pl.sda.springboot.model.Channel;
-import pl.sda.springboot.model.Seance;
+import pl.lker.tv.scheduler.generator.HtmlService;
+import pl.lker.tv.scheduler.generator.service.channellNames.ChannelNamesService;
+import pl.lker.tv.scheduler.generator.service.channel.ChannelListService;
+import pl.lker.tv.scheduler.model.Channel;
+import pl.lker.tv.scheduler.model.Seance;
 
 import java.util.Comparator;
 import java.util.List;

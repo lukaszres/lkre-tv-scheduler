@@ -1,4 +1,4 @@
-package pl.sda.springboot.generator.service.channellNames;
+package pl.lker.tv.scheduler.generator.service.channellNames;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,10 +1,10 @@
-package pl.sda.springboot.generator.service;
+package pl.lker.tv.scheduler.generator.service;
 
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import pl.sda.springboot.generator.builder.SeanceBuilder;
-import pl.sda.springboot.model.Channel;
-import pl.sda.springboot.model.Seance;
+import pl.lker.tv.scheduler.generator.builder.SeanceBuilder;
+import pl.lker.tv.scheduler.model.Channel;
+import pl.lker.tv.scheduler.model.Seance;
 
 import java.text.ParseException;
 import java.util.ArrayList;

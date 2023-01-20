@@ -1,11 +1,11 @@
-package pl.sda.springboot.controller;
+package pl.lker.tv.scheduler.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import pl.sda.springboot.generator.HtmlService;
-import pl.sda.springboot.generator.service.HtmlServiceImpl;
-import pl.sda.springboot.model.Seance;
-import pl.sda.springboot.model.User;
+import pl.lker.tv.scheduler.generator.HtmlService;
+import pl.lker.tv.scheduler.generator.service.HtmlServiceImpl;
+import pl.lker.tv.scheduler.model.Seance;
+import pl.lker.tv.scheduler.model.User;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 

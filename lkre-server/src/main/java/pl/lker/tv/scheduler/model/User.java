@@ -1,4 +1,4 @@
-package pl.sda.springboot.model;
+package pl.lker.tv.scheduler.model;
 
 
 import lombok.AllArgsConstructor;

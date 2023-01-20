@@ -1,7 +1,7 @@
-package pl.sda.springboot.generator.service.channel;
+package pl.lker.tv.scheduler.generator.service.channel;
 
-import pl.sda.springboot.generator.service.downloader.DocumentDownloaderImpl;
-import pl.sda.springboot.model.Channel;
+import pl.lker.tv.scheduler.generator.service.downloader.DocumentDownloaderImpl;
+import pl.lker.tv.scheduler.model.Channel;
 
 import java.io.IOException;
 import java.text.ParseException;

@@ -52,7 +52,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>pl.sda.springboot.Application</mainClass>
+                    <mainClass>pl.lker.tv.scheduler.Application</mainClass>
                 </configuration>
             </plugin>
         </plugins>

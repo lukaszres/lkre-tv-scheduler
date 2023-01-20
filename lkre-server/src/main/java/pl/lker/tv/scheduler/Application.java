@@ -1,4 +1,4 @@
-package pl.sda.springboot;
+package pl.lker.tv.scheduler;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

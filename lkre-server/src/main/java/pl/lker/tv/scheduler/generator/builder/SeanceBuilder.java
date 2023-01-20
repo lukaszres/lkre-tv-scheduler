@@ -1,8 +1,8 @@
-package pl.sda.springboot.generator.builder;
+package pl.lker.tv.scheduler.generator.builder;
 
 import org.jsoup.nodes.Element;
 import org.jsoup.nodes.Node;
-import pl.sda.springboot.model.Seance;
+import pl.lker.tv.scheduler.model.Seance;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

@@ -1,4 +1,4 @@
-package pl.sda.springboot.controller;
+package pl.lker.tv.scheduler.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,13 +1,13 @@
-package pl.sda.springboot.generator.service.channel;
+package pl.lker.tv.scheduler.generator.service.channel;
 
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
-import pl.sda.springboot.generator.service.SeanceService;
-import pl.sda.springboot.generator.service.downloader.DocumentDownloader;
-import pl.sda.springboot.generator.service.genre.GenreService;
-import pl.sda.springboot.generator.service.genre.GenreServiceImpl;
-import pl.sda.springboot.model.Channel;
-import pl.sda.springboot.model.Seance;
+import pl.lker.tv.scheduler.generator.service.SeanceService;
+import pl.lker.tv.scheduler.generator.service.downloader.DocumentDownloader;
+import pl.lker.tv.scheduler.generator.service.genre.GenreService;
+import pl.lker.tv.scheduler.generator.service.genre.GenreServiceImpl;
+import pl.lker.tv.scheduler.model.Channel;
+import pl.lker.tv.scheduler.model.Seance;
 
 import java.io.IOException;
 import java.text.ParseException;

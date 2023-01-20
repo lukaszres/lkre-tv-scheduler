@@ -1,4 +1,4 @@
-package pl.sda.springboot;
+package pl.lker.tv.scheduler;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;

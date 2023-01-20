@@ -1,6 +1,6 @@
-package pl.sda.springboot.generator.service.genre;
+package pl.lker.tv.scheduler.generator.service.genre;
 
-import pl.sda.springboot.model.Seance;
+import pl.lker.tv.scheduler.model.Seance;
 
 import java.util.ArrayList;
 import java.util.List;

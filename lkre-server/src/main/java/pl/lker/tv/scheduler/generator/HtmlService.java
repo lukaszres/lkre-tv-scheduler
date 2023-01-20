@@ -1,7 +1,7 @@
-package pl.sda.springboot.generator;
+package pl.lker.tv.scheduler.generator;
 
 
-import pl.sda.springboot.model.Seance;
+import pl.lker.tv.scheduler.model.Seance;
 
 import java.util.List;
 

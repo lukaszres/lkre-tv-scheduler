@@ -1,4 +1,4 @@
-package pl.sda.springboot.generator.service.downloader;
+package pl.lker.tv.scheduler.generator.service.downloader;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
