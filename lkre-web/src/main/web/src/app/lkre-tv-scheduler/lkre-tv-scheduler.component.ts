@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Seance} from "./models";
-import { HttpClient } from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
+import {FormControl} from "@angular/forms";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'lkre-tv-scheduler',
@@ -9,20 +11,29 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LkreTvSchedulerComponent implements OnInit {
 
-  seances: Seance[];
+  toppings = new FormControl('');
+  toppingList: string[];
+
+  allSeances: Seance[];
+  selectedSeances: Seance[];
 
   constructor(private httpClient: HttpClient) {
   }
 
   ngOnInit() {
-    this.getSeances();
+    this.getSeances().subscribe(seances => {
+      this.allSeances = seances;
+      this.selectedSeances = seances;
+      this.toppingList = Array.from(new Set(seances.map(seance => seance.genre)));
+    })
   }
 
+  getSeances(): Observable<Seance[]> {
+    return this.httpClient.get<Seance[]>('/seances')
+  }
 
-  getSeances(): any {
-    this.httpClient.get<Seance[]>('/seances')
-      .subscribe((seances) => {
-        this.seances = seances
-      });
+  onToppingsChanged() {
+    let genres: string[] = this.toppings.value;
+    this.selectedSeances = this.allSeances.filter(value => genres.find(e => e === value.genre));
   }
 }
