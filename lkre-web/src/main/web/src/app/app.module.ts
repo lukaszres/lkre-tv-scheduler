@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import {AppComponent} from './app.component';
 import {LkreTvSchedulerComponent} from './lkre-tv-scheduler/lkre-tv-scheduler.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import {LkreTvSchedulerComponent} from './lkre-tv-scheduler/lkre-tv-scheduler.co
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
