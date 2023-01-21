@@ -1,9 +1,3 @@
-<p>lkre-tv-scheduler works!</p>
-
-<button mat-raised-button color="primary">Primary</button>
-<mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
-<mat-progress-bar mode="indeterminate"></mat-progress-bar>
-
 <mat-form-field appearance="fill">
   <mat-label>Toppings</mat-label>
   <mat-select [formControl]="toppings" multiple (ngModelChange)="onToppingsChanged()">
@@ -20,4 +14,3 @@
 <ul>
   <li *ngFor="let seance of selectedSeances">{{seance.title}} | {{seance.genre}} | {{seance.time}}</li>
 </ul>
-<mat-slide-toggle>Toggle me!</mat-slide-toggle>
