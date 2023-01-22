@@ -12,7 +12,7 @@ import {Observable} from "rxjs";
 export class LkreTvSchedulerComponent implements OnInit {
 
   toppings = new FormControl('');
-  toppingList: string[];
+  genres: string[];
 
   allSeances: Seance[];
   selectedSeances: Seance[];
@@ -24,7 +24,7 @@ export class LkreTvSchedulerComponent implements OnInit {
     this.getSeances().subscribe(seances => {
       this.allSeances = seances;
       this.selectedSeances = seances;
-      this.toppingList = Array.from(new Set(seances.map(seance => seance.genre)));
+      this.genres = Array.from(new Set(seances.map(seance => seance.genre)));
     })
   }
 
