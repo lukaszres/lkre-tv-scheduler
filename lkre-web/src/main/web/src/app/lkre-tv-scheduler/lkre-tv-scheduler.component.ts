@@ -22,7 +22,7 @@ export class LkreTvSchedulerComponent implements OnInit {
 
   ngOnInit() {
     this.getSeances().subscribe(seances => {
-      this.allSeances = seances.sort((a, b) => (a.time > b.time) ? -1 : 0);
+      this.allSeances = seances.sort((a, b) => (a.time > b.time) ? 0 : -1);
       this.selectedSeances = seances;
       this.genres = Array.from(new Set(seances.map(seance => seance.genre)));
     })
