@@ -3,6 +3,7 @@ import {Seance} from "./models";
 import {HttpClient} from '@angular/common/http';
 import {FormControl} from "@angular/forms";
 import {Observable} from "rxjs";
+import {formatDate} from "@angular/common";
 
 @Component({
   selector: 'lkre-tv-scheduler',
@@ -10,6 +11,7 @@ import {Observable} from "rxjs";
   styleUrls: ['./lkre-tv-scheduler.component.css']
 })
 export class LkreTvSchedulerComponent implements OnInit {
+  SEPARATOR: string = " :: ";
 
   toppings = new FormControl('');
   genres: string[];
@@ -35,5 +37,10 @@ export class LkreTvSchedulerComponent implements OnInit {
   onToppingsChanged() {
     let genres: string[] = this.toppings.value;
     this.selectedSeances = this.allSeances.filter(value => genres.find(e => e === value.genre));
+  }
+
+  seanceToString(seance: Seance): string {
+    let episode = seance.episode != null ? this.SEPARATOR + seance.episode : "";
+    return formatDate(seance.time, "h:mm", "en-US")  + this.SEPARATOR + seance.channel + this.SEPARATOR + seance.genre + this.SEPARATOR + seance.title + episode;
   }
 }

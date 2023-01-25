@@ -12,5 +12,5 @@
 </mat-form-field>
 
 <ul>
-  <li *ngFor="let seance of selectedSeances">{{seance.title}} | {{seance.genre}} | {{seance.time}}</li>
+  <li *ngFor="let seance of selectedSeances">{{seanceToString(seance)}}</li>
 </ul>
