@@ -11,6 +11,6 @@
   </mat-select>
 </mat-form-field>
 
-<ul>
-  <li *ngFor="let seance of selectedSeances">{{seanceToString(seance)}}</li>
-</ul>
+<pre *ngIf="selectedSeances">
+  {{seancesToString()}}
+</pre>

@@ -39,6 +39,10 @@ export class LkreTvSchedulerComponent implements OnInit {
     this.selectedSeances = this.allSeances.filter(value => genres.find(e => e === value.genre));
   }
 
+  seancesToString(): string {
+    return this.selectedSeances.map(value => this.seanceToString(value)).join('\n');
+  }
+
   seanceToString(seance: Seance): string {
     let episode = seance.episode != null ? this.SEPARATOR + seance.episode : "";
     return formatDate(seance.time, "hh:mm", "en-US")  + this.SEPARATOR + seance.channel + this.SEPARATOR + seance.genre + this.SEPARATOR + seance.title + episode;
