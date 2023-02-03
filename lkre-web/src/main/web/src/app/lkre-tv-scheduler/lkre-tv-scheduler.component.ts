@@ -41,6 +41,6 @@ export class LkreTvSchedulerComponent implements OnInit {
 
   seanceToString(seance: Seance): string {
     let episode = seance.episode != null ? this.SEPARATOR + seance.episode : "";
-    return formatDate(seance.time, "h:mm", "en-US")  + this.SEPARATOR + seance.channel + this.SEPARATOR + seance.genre + this.SEPARATOR + seance.title + episode;
+    return formatDate(seance.time, "hh:mm", "en-US")  + this.SEPARATOR + seance.channel + this.SEPARATOR + seance.genre + this.SEPARATOR + seance.title + episode;
   }
 }
