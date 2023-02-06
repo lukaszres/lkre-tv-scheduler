@@ -35,7 +35,7 @@ export class LkreTvSchedulerComponent implements OnInit {
   }
 
   getSeances(): Observable<Seance[]> {
-    return this.httpClient.get<Seance[]>('/seances')
+    return this.httpClient.get<Seance[]>('/seances');
   }
 
   onToppingsChanged() {
