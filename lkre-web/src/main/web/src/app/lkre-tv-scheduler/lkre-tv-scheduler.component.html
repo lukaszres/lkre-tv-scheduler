@@ -11,6 +11,6 @@
   </mat-select>
 </mat-form-field>
 
-<pre *ngIf="selectedSeances">
-  {{seancesToString()}}
+<pre *ngIf="selectedSeances" (click)="copyToClipboard()">
+  {{selectedSeancesString}}
 </pre>

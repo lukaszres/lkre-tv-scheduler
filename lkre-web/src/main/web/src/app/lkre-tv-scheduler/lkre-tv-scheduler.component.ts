@@ -4,6 +4,8 @@ import {HttpClient} from '@angular/common/http';
 import {FormControl} from "@angular/forms";
 import {Observable} from "rxjs";
 import {formatDate} from "@angular/common";
+import {MatSnackBar} from "@angular/material/snack-bar";
+import {MatSnackBarConfig} from "@angular/material/snack-bar/typings/snack-bar-config";
 
 @Component({
   selector: 'lkre-tv-scheduler',
@@ -18,8 +20,10 @@ export class LkreTvSchedulerComponent implements OnInit {
 
   allSeances: Seance[];
   selectedSeances: Seance[];
+  selectedSeancesString: string;
 
-  constructor(private httpClient: HttpClient) {
+  constructor(private httpClient: HttpClient,
+              private _snackBar: MatSnackBar) {
   }
 
   ngOnInit() {
@@ -37,14 +41,26 @@ export class LkreTvSchedulerComponent implements OnInit {
   onToppingsChanged() {
     let genres: string[] = this.toppings.value;
     this.selectedSeances = this.allSeances.filter(value => genres.find(e => e === value.genre));
+    this.selectedSeancesString = this.seancesToString(this.selectedSeances);
   }
 
-  seancesToString(): string {
+  seancesToString(selectedSeances: Seance[]): string {
     return this.selectedSeances.map(value => this.seanceToString(value)).join('\n');
   }
 
   seanceToString(seance: Seance): string {
     let episode = seance.episode != null ? this.SEPARATOR + seance.episode : "";
-    return formatDate(seance.time, "hh:mm", "en-US")  + this.SEPARATOR + seance.channel + this.SEPARATOR + seance.genre + this.SEPARATOR + seance.title + episode;
+    return formatDate(seance.time, "hh:mm", "en-US") + this.SEPARATOR + seance.channel + this.SEPARATOR + seance.genre + this.SEPARATOR + seance.title + episode;
+  }
+
+  copyToClipboard(): void {
+    let listener = (e: ClipboardEvent) => {
+      e.clipboardData.setData('text/plain', (this.selectedSeancesString));
+      e.preventDefault();
+    };
+    document.addEventListener('copy', listener);
+    document.execCommand('copy');
+    document.removeEventListener('copy', listener);
+    this._snackBar.open("copied", '', {duration: 5000} as MatSnackBarConfig);
   }
 }
