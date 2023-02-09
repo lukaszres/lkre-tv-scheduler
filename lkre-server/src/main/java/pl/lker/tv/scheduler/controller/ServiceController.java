@@ -4,11 +4,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import pl.lker.tv.scheduler.database.Repository;
+import pl.lker.tv.scheduler.database.RepositoryImpl;
 import pl.lker.tv.scheduler.generator.HtmlService;
 import pl.lker.tv.scheduler.generator.service.HtmlServiceImpl;
 import pl.lker.tv.scheduler.model.Seance;
-import pl.lker.tv.scheduler.model.User;
 
+import java.sql.*;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
@@ -16,11 +18,7 @@ import java.util.List;
 @RestController
 public class ServiceController {
     public static final long HOUR = 3600 * 1000; // in milli-seconds.
-
-    @GetMapping("/service")
-    public User serv() {
-        return new User("firstname", "lastname");
-    }
+    private Repository repository = new RepositoryImpl();
 
     @GetMapping("/seances")
     public ResponseEntity<List<Seance>> seances() {
@@ -28,6 +26,13 @@ public class ServiceController {
         List<Seance> seances = null;
 //        seances = htmlService.downloadSeances();
         seances = getSeances();
+        repository.insertSeance(seances.get(0));
+        return new ResponseEntity<>(seances, HttpStatus.OK);
+    }
+
+    @GetMapping("/database")
+    public ResponseEntity<List<Seance>> databaseSeances() {
+        final List<Seance> seances = repository.selectSeances();
         return new ResponseEntity<>(seances, HttpStatus.OK);
     }
 

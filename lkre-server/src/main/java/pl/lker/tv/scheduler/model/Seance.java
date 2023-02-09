@@ -16,10 +16,6 @@ public class Seance {
     String episode;
     String channel;
 
-    Optional<String> getEpisode() {
-        return Optional.ofNullable(episode);
-    }
-
     @Override
     public boolean equals(Object o){
         if(o == this){
