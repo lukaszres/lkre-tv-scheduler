@@ -4,7 +4,7 @@
     <parent>
         <groupId>pl.lkre</groupId>
         <artifactId>lkre-tv-scheduler</artifactId>
-        <version>1.1.0</version>
+        <version>1.1.1-SNAPSHOT</version>
     </parent>
 
     <artifactId>lkre-web</artifactId>
