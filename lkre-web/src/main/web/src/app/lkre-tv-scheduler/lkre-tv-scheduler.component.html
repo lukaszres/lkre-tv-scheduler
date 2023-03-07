@@ -1,4 +1,5 @@
 <button mat-raised-button (click)="downloadSeances()">Download seances</button> <br>
+<mat-progress-bar mode="indeterminate" *ngIf="isDownloading"></mat-progress-bar>
 <mat-form-field appearance="fill">
   <mat-label>Genre</mat-label>
   <mat-select [formControl]="toppings" multiple (ngModelChange)="onToppingsChanged()">

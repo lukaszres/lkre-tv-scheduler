@@ -21,6 +21,7 @@ export class LkreTvSchedulerComponent implements OnInit {
   allSeances: Seance[];
   selectedSeances: Seance[];
   selectedSeancesString: string;
+  isDownloading: boolean = false;
 
   constructor(private httpClient: HttpClient,
               private _snackBar: MatSnackBar) {
@@ -30,10 +31,12 @@ export class LkreTvSchedulerComponent implements OnInit {
   }
 
   downloadSeances() {
+    this.isDownloading = true;
     this.getSeances().subscribe(seances => {
       this.allSeances = seances.sort((a, b) => (a.time > b.time) ? 0 : -1);
       this.selectedSeances = seances;
       this.genres = Array.from(new Set(seances.map(seance => seance.genre)));
+      this.isDownloading = false;
     })
   }
 
